@@ -1,0 +1,17 @@
+name: My First Workflow 
+on: 
+ workflow_dispatch: 
+    # this is the event trigger for the workflow to run
+jobs:
+  job-name-1:
+    runs-on: ubuntu-latest
+    steps:
+      # mention what will be installed/executed on the runner VM
+        - name: Run single command
+          run: echo "This is step 1"
+        - name: Run multiple commands
+          run: |
+            mkdir mydemo    
+            cd mydemo
+            echo "This file is on runner VM" > mydemo.txt
+            echo "This is step 2"
